@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 20px auto;
+    border: 2px solid #333;
+    /* box-sizing: border-box; */
+    width: 400px;
+}
+
+.board-row {
+    display: contents;
+}
+
+.board-row > * {
+    box-sizing: border-box; /* Apply to all children of .board-row */
+    border: 1px solid #ddd;
+}
+
+.snake-cell, .food-cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.snake-cell {
+    background-color: green;
+}
+
+.food-cell {
+    background-color: red;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin: 15px 0;
+}
