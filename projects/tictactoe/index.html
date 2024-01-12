@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="currentView === 'mainMenu'">
+            <button @click="startGame">Start Game</button>
+        </div>
+
+        <div v-if="currentView === 'playingState'" class="board">
+            <div v-for="(cell, index) in board" :key="index" class="cell" @click="makeMove(index)">
+                {{ cell }}
+            </div>
+        </div>
+
+        <div v-if="currentView === 'gameOverState'">
+            <p>{{ gameOverMessage }}</p>
+            <button @click="returnToMenu">Return to Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
