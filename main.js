@@ -30,7 +30,7 @@ const MainComponent = {
     data() {
         return {
             projects: [
-                { id: 1, title: 'Monster Slayer', description: 'Descripción del Proyecto 1', url:'projects\monsterslayer\index.html' },
+                { id: 1, title: 'Monster Slayer', description: 'Descripción del Proyecto 1', url:'projects/monsterslayer/index.html' },
                 { id: 2, title: 'Proyecto 2', description: 'Descripción del Proyecto 2' }
                 // Agregar más proyectos aquí
             ]
