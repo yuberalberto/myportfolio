@@ -17,7 +17,7 @@ const MainComponent = {
                 <h2>Proyectos</h2>
                 <!-- Marcador de posición para proyectos -->
                 <div v-for="project in projects" :key="project.id">
-                    <h3>{{ project.title }}</h3>
+                    <h3><a :href="project.url" target="_blank">{{ project.title }}</a></h3>
                     <p>{{ project.description }}</p>
                 </div>
             </section>
@@ -30,7 +30,7 @@ const MainComponent = {
     data() {
         return {
             projects: [
-                { id: 1, title: 'Proyecto 1', description: 'Descripción del Proyecto 1' },
+                { id: 1, title: 'Monster Slayer', description: 'Descripción del Proyecto 1', url:'projects/monsterslayer.html' },
                 { id: 2, title: 'Proyecto 2', description: 'Descripción del Proyecto 2' }
                 // Agregar más proyectos aquí
             ]
