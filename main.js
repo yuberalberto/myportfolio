@@ -48,7 +48,9 @@ const MainComponent = {
             projects: [
                 { id: 1, title: 'Monster Slayer', description: 'Descripción del Proyecto 1', url:'projects/monsterslayer/index.html' },
                 { id: 2, title: 'Snake', description: 'Descripción del Proyecto 2', url:'projects/snake/index.html' },
-                { id: 3, title: 'Tic Tac Toe', description: 'Descripción del Proyecto 2', url:'projects/tictactoe/index.html' }
+                { id: 3, title: 'Tic Tac Toe', description: 'Descripción del Proyecto 3', url:'projects/tictactoe/index.html' },
+                { id: 4, title: 'Robofriend(react-redux)', description: 'Descripción del Proyecto 4', url:'https://yuberalberto.github.io/robofriendsredux/' },
+                { id: 5, title: 'VCCV Entrepreneurship Project', description: 'Descripción del Proyecto 5', url:'https://yuberalberto.github.io/vccv-app/' }
                 // Add more projects here
             ]
         }
