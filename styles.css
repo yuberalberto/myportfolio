@@ -32,8 +32,8 @@ body {
 
 header {
   font-family: var(--font-heading);
-  background-color: var(--color-accent);
-  color: var(--color-highlight);
+  background-color: var(--color-secondary);
+  color: #353535;
   padding: 20px 0;
   text-align: center;
 }
@@ -43,15 +43,30 @@ header h1 {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  text-decoration: underline;
+}
+
+nav h2 {
+  padding-left: 1.5rem;
+}
+
 nav a {
   color: var(--color-tertiary);
   text-decoration: none;
   padding: 5px 10px;
   transition: color 0.3s;
+
 }
 
 nav a:hover {
   color: var(--color-highlight);
+  text-decoration: underline;
+  background-color: var(--color-tertiary);
+  border-radius: 5%;
+  cursor: pointer;
+
 }
 
 main {

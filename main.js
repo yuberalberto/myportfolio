@@ -9,6 +9,33 @@ const HeaderComponent = {
 const MainComponent = {
     template: `
         <main>
+            <nav> 
+                <h2>Content</h2>
+                <ul>
+                    <li>
+                    <a @click="scrollToSection('about-me')">About Me</a>
+                    </li>
+                    <li>
+                    <a @click="scrollToSection('background')">Educational Background</a>
+                    </li>
+                    <li>
+                    <a @click="scrollToSection('projects')">Projects</a>
+                    </li>
+                    <li>
+                    <a @click="scrollToSection('skills-interest')">Skills & Interests</a>
+                    </li>
+                    <li>
+                    <a @click="scrollToSection('beyond-coding')">Beyond Coding</a>
+                    </li>
+                    <li>
+                        <a @click="scrollToSection('aspirations')">My Aspirations</a>
+                    </li>
+                    <li>
+                        <a @click="scrollToSection('contact')">Let's Connect</a>
+                    </li>
+                    <!-- Add more menu items as needed -->
+                </ul>            
+            </nav>
             <section id="about-me">
                 <h2>About Me</h2>
                 <p>Hello! I'm Yuber, an enthusiastic and budding electronic engineer with a passion for technology and a keen interest in web development. Although I'm just starting my professional journey in the frontend web development, my fascination with coding and commitment to continual learning have been the driving forces behind my growth.</p>
@@ -18,7 +45,7 @@ const MainComponent = {
                 <p>I recently graduated from [Your University/College Name] with a degree in [Your Degree, e.g., Computer Science]. During my academic tenure, I delved into various aspects of programming and completed several projects, which you can view in my portfolio section. My thirst for knowledge didn't stop at university; I've actively engaged in online courses on platforms like Coursera and Codecademy, focusing on [Specific Languages or Skills, e.g., JavaScript, React].</p>
             </section>
             <section id="projects">
-                <h2>Proyectos</h2>
+                <h2>Projects</h2>
                 <!-- Marcador de posición para proyectos -->
                 <div v-for="project in projects" :key="project.id">
                     <h3><a :href="project.url" target="_blank">{{ project.title }}</a></h3>
@@ -54,7 +81,23 @@ const MainComponent = {
                 // Add more projects here
             ]
         }
-    }
+    },
+    methods: {
+        scrollToSection(sectionId) {
+            const targetSection = document.getElementById(sectionId);
+
+            if (targetSection) {
+                const offsetTop = targetSection.getBoundingClientRect().top;
+                const headerHeight = document.querySelector('header').offsetHeight;
+
+                window.scroll({
+                    top: offsetTop + window.scrollY - headerHeight,
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        },
+    },
 };
 
 const FooterComponent = {
@@ -70,5 +113,5 @@ Vue.createApp({
         'header-component': HeaderComponent,
         'main-component': MainComponent,
         'footer-component': FooterComponent
-    }
+    },
 }).mount('#app');
